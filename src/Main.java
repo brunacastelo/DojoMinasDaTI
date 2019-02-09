@@ -28,14 +28,14 @@ public class Main {
 
             arq.close();
         } catch (IOException e) {
-            System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage());
+            System.err.printf("Error opening file: %s.\n", e.getMessage());
         }
 
-        System.out.println("Quantidade de pessoas que entraram no banco: " + quant);
+        System.out.println("Number of people entering the bank\n: " + quant);
     }
 
     public static int countTimesOfBank(String date) {
-        LocalTime localTime = validaEntrada(date);
+        LocalTime localTime = validateInput(date);
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
@@ -48,7 +48,7 @@ public class Main {
         return 0;
     }
 
-    public static LocalTime validaEntrada(String date) {
+    public static LocalTime validateInput(String date) {
 
         date = date.substring(date.indexOf("[") + 1);
         date = date.substring(0, date.indexOf("]"));

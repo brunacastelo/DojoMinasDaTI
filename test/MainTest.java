@@ -12,7 +12,7 @@ public class MainTest {
         String date = "[2018-01-21 12:00:00] - Abertura da Porta OK";
 
         Main main = new Main();
-        LocalTime localTime = main.validaEntrada(date);
+        LocalTime localTime = main.validateInput(date);
 
         assertEquals(localTime, LocalTime.of(12,00,00));
     }
@@ -23,7 +23,7 @@ public class MainTest {
         String date = "[2018-01-21 123:00:00] - Abertura da Porta OK";
 
         Main main = new Main();
-        main.validaEntrada(date);
+        main.validateInput(date);
     }
 
     @Test
